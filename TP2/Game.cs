@@ -44,21 +44,28 @@ namespace TP2
         public static int GetSuitFromCardIndex(int index)
         {
             // PROF : À COMPLETER. Le code ci-après est incorrect
-            return 0;
+           int suit =  index / NUM_CARDS_PER_SUIT;
+           return suit;
         }
         public static int GetValueFromCardIndex(int index)
         {
             // PROF : À COMPLETER. Le code ci-après est incorrect
-            return 0;
+            int value =  index % NUM_CARDS_PER_SUIT;
+            return value;
         }
 
         public static void DrawFaces(int[] cardValues, bool[] selectedCards, bool[] availableCards)
         {
             // PROF : À COMPLETER.
+            Random rnd = new Random();
+           
+           
+
         }
         public static int GetScoreFromCardValue(int cardValue)
         {
             // PROF : À COMPLETER. Le code ci-après est incorrect
+
             return 0;
         }
 
