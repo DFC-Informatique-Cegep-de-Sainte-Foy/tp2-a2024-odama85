@@ -59,7 +59,18 @@ namespace TP2
             // PROF : À COMPLETER.
             Random rnd = new Random();
            
-           
+            for (int i = 0; i < selectedCards.Length; i++) 
+            {
+                if (!selectedCards[i]) 
+                {
+                    int cardSelected = rnd.Next(0, availableCards.Length + 1); 
+                    while (!availableCards[cardSelected]) 
+                    {
+                        cardSelected = rnd.Next(0, availableCards.Length + 1);
+                    }
+                    cardValues[i] = GetValueFromCardIndex(cardSelected);
+                }
+            }
 
         }
         public static int GetScoreFromCardValue(int cardValue)
