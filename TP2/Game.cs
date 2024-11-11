@@ -57,18 +57,21 @@ namespace TP2
         public static void DrawFaces(int[] cardValues, bool[] selectedCards, bool[] availableCards)
         {
             // PROF : À COMPLETER.
-            Random rnd = new Random();
-           
-            for (int i = 0; i < selectedCards.Length; i++) 
+            Random random = new Random();
+
+            for (int i = 0; i < selectedCards.Length; i++)
             {
-                if (!selectedCards[i]) 
+                if (!selectedCards[i])
                 {
-                    int cardSelected = rnd.Next(0, availableCards.Length + 1); 
-                    while (!availableCards[cardSelected]) 
+                    // selectionner un index au hazard
+                    int newCardSelected = random.Next(0, availableCards.Length);
+                    while (!availableCards[newCardSelected])
                     {
-                        cardSelected = rnd.Next(0, availableCards.Length + 1);
+                        newCardSelected = random.Next(0, availableCards.Length);
                     }
-                    cardValues[i] = GetValueFromCardIndex(cardSelected);
+
+                    cardValues[i] = newCardSelected;
+                    availableCards[i] = true;
                 }
             }
 
