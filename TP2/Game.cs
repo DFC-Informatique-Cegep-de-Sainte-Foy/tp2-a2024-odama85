@@ -76,9 +76,23 @@ namespace TP2
         public static int GetScoreFromCardValue(int cardValue)
         {
             // PROF : À COMPLETER. Le code ci-après est incorrect
+            int scoreCard = 0;
+            if (cardValue == ACE)
+            {
+                scoreCard = ACES_SCORE;
+            }
+            else if (cardValue == KING || cardValue == QUEEN || cardValue == JACK)
+            {
+                scoreCard = FACES_SCORE;
+            }
+            else
+            {
+                scoreCard = cardValue + 1;
+            }
 
-            return 0;
+            return scoreCard;
         }
+    }
 
         public static int GetHandScore(int[] cardIndexes)
         {
