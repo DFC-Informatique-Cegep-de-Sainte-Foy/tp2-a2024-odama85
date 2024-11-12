@@ -44,13 +44,13 @@ namespace TP2
         public static int GetSuitFromCardIndex(int index)
         {
             // PROF : À COMPLETER. Le code ci-après est incorrect
-           int suit =  index / NUM_CARDS_PER_SUIT;
-           return suit;
+            int suit = index / NUM_CARDS_PER_SUIT;
+            return suit;
         }
         public static int GetValueFromCardIndex(int index)
         {
             // PROF : À COMPLETER. Le code ci-après est incorrect
-            int value =  index % NUM_CARDS_PER_SUIT;
+            int value = index % NUM_CARDS_PER_SUIT;
             return value;
         }
 
@@ -58,20 +58,21 @@ namespace TP2
         {
             // PROF : À COMPLETER.
             Random rnd = new Random();
-           
-            for (int i = 0; i < selectedCards.Length; i++) 
+
+            for (int i = 0; i < selectedCards.Length; i++)
             {
-                if (!selectedCards[i]) 
+                if (!selectedCards[i])
                 {
-                    int cardSelected = rnd.Next(0, availableCards.Length + 1); 
-                    while (!availableCards[cardSelected]) 
+                    int cardSelected = rnd.Next(0, availableCards.Length + 1);
+                    while (!availableCards[cardSelected])
                     {
                         cardSelected = rnd.Next(0, availableCards.Length + 1);
                     }
                     cardValues[i] = GetValueFromCardIndex(cardSelected);
+                    cardValues[i] = cardSelected;
+                    availableCards[i] = true;
                 }
             }
-
         }
         public static int GetScoreFromCardValue(int cardValue)
         {
@@ -92,13 +93,21 @@ namespace TP2
 
             return scoreCard;
         }
-    }
-
-        public static int GetHandScore(int[] cardIndexes)
+        public static int GetHighestCardValue(int[] values)
         {
-            // PROF : À COMPLETER. Le code ci-après est incorrect
-            return 0;
+            for (int i = 0; i < values[i]; i++)
+            {
+
+            }
+            return values;
         }
+
+
+        //public static int GetHandScore(int[] cardIndexes)
+        //{
+        //    // PROF : À COMPLETER. Le code ci-après est incorrect
+        //    return 0;
+        //}
 
         // A COMPLETER
         // ...
@@ -107,15 +116,15 @@ namespace TP2
         // ATTENTION! Suivez bien les noms dans les tests, car je vais utiliser mon propre fichier
         // (qui est exactement comme le vôtre, mais vous ne pourrez pas me faire parvenir un fichier
         // de tests avec vos noms de fonctions).
-
-
-
-
-
         public static void ShowScore(int[] cardIndexes)
         {
-            int hand = GetHandScore(cardIndexes);
-            Display.WriteString($"Votre score est de : {hand}", 0, Display.CARD_HEIGHT + 14, ConsoleColor.Black);
+            //int hand = GetHandScore(cardIndexes);
+            //Display.WriteString($"Votre score est de : {hand}", 0, Display.CARD_HEIGHT + 14, ConsoleColor.Black);
         }
+
+
     }
+
+
 }
+

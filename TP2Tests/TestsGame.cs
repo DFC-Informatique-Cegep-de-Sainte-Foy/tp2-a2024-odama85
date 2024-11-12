@@ -7,90 +7,88 @@ namespace TP2Tests
         // PROF : nous testons certaines fonctions avec 5 choix, car il est demandé que vos
         // fonctions soient bonnes en général et non seulement pour le jeu du 31 (lorsque applicable).
         //#region GetScoreFromCardValue
-        //[Fact]
-        //public void CanGetNormalCardScore()
-        //{
-        //    const int EXPECTED = 5;
-        //    // Arrange
-        //    // 5
-        //    int cardValue = Game.FIVE;
+        [Fact]
+        public void CanGetNormalCardScore()
+        {
+            const int EXPECTED = 5;
+            // Arrange
+            // 5
+            int cardValue = Game.FIVE;
 
-        //    // Act
-        //    int score = Game.GetScoreFromCardValue(cardValue);
+            // Act
+            int score = Game.GetScoreFromCardValue(cardValue);
 
-        //    // Assert
-        //    Assert.Equal(EXPECTED, score);
-        //}
-        //[Fact]
-        //public void CanGetFaceCardScore()
-        //{
-        //    // Arrange
-        //    // Roi
-        //    int cardValue = Game.KING;
+            // Assert
+            Assert.Equal(EXPECTED, score);
+        }
+        [Fact]
+        public void CanGetFaceCardScore()
+        {
+            // Arrange
+            //Roi
+            int cardValue = Game.KING;
 
-        //    // Act
-        //    int score = Game.GetScoreFromCardValue(cardValue);
+            // Act
+            int score = Game.GetScoreFromCardValue(cardValue);
 
-        //    // Assert
-        //    Assert.Equal(Game.FACES_SCORE, score);
-        //}
+            // Assert
+            Assert.Equal(Game.FACES_SCORE, score);
+        }
 
-        //[Fact]
-        //public void CanGetAceCardScore()
-        //{
-        //    // Arrange
-        //    // Roi
-        //    int cardValue = Game.ACE;
+        [Fact]
+        public void CanGetAceCardScore()
+        {
+            // Arrange
+            // Roi
+            int cardValue = Game.ACE;
 
-        //    // Act
-        //    int score = Game.GetScoreFromCardValue(cardValue);
+            // Act
+            int score = Game.GetScoreFromCardValue(cardValue);
 
-        //    // Assert
-        //    Assert.Equal(Game.ACES_SCORE, score);
-        //}
-
-        //#endregion // GetHighestCardValue
+            // Assert
+            Assert.Equal(Game.ACES_SCORE, score);
+        }
 
         //#region GetHighestCardValue
-        //[Fact]
-        //public void CanGetHighestCardValueOnNormalHand()
-        //{
-        //    // Arrange
-        //    // 3, 7, 6, Reine, 4
-        //    int[] values = { 2, 6, 5, 11, 3 };
+        [Fact]
+        public void CanGetHighestCardValueOnNormalHand()
+        {
+            // Arrange
+            // 3, 7, 6, Reine, 4
+            int[] values = { 2, 6, 5, 11, 3 };
 
-        //    // Act
-        //    int highestCard = Game.GetHighestCardValue(values);
+            // Act
+            int highestCard = Game.GetHighestCardValue(values);
 
-        //    // Assert
-        //    Assert.Equal(Game.QUEEN, highestCard);
-        //}
-        //[Fact]
-        //public void CanGetHighestCardValueOnConstantHand()
-        //{
-        //    // Arrange
-        //    // 3, 3, 3, 3, 3
-        //    int[] values = { 2, 2, 2, 2, 2 };
+            // Assert
+            Assert.Equal(Game.QUEEN, highestCard);
+        }
+        [Fact]
+        public void CanGetHighestCardValueOnConstantHand()
+        {
+            // Arrange
+            // 3, 3, 3, 3, 3
+            int[] values = { 2, 2, 2, 2, 2 };
 
-        //    // Act
-        //    int highestDice = Game.GetHighestCardValue(values);
+            // Act
+            int highestDice = Game.GetHighestCardValue(values);
 
-        //    // Assert
-        //    Assert.Equal(Game.THREE, highestDice);
-        //}
-        //[Fact]
-        //public void CanGetHighestCardValueWithAceInHand()
-        //{
-        //    // Arrange
-        //    // 3, Roi, As, 7, 4
-        //    int[] values = { 2, 12, 0, 6, 3 };
+            // Assert
+            Assert.Equal(Game.THREE, highestDice);
+        }
+        [Fact]
+        public void CanGetHighestCardValueWithAceInHand()
+        {
+            // Arrange
+            // 3, Roi, As, 7, 4
+            int[] values = { 2, 12, 0, 6, 3 };
 
-        //    // Act
-        //    int highestDice = Game.GetHighestCardValue(values);
+            // Act
+            int highestDice = Game.GetHighestCardValue(values);
 
-        //    // Assert
-        //    Assert.Equal(Game.ACE, highestDice);
-        //}
+            // Assert
+            Assert.Equal(Game.ACE, highestDice);
+        }
         //#endregion // GetHighestCardValue
 
         //#region HasOnlySameColorCards
