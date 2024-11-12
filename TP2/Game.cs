@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design;
 
 namespace TP2
 {
@@ -93,14 +94,41 @@ namespace TP2
 
             return scoreCard;
         }
+        // Fonction de tri à bulles necessaire pour classer un tableau en ordre 
+        public static void BubbleSort(int[] values)
+        {
+            bool isSmaller = false;
+            do
+            {
+                isSmaller = false;
+                int element_Temporary = 0;
+                for (int i = 0; i < values.Length - 1; i++)
+                {
+                    if (values[i] > values[i + 1])
+                    {
+                        isSmaller = true;
+                        element_Temporary = values[i];
+                        values[i] = values[i + 1];
+                        values[i + 1] = element_Temporary;
+                    }
+                }
+            } while (isSmaller);
+        }
         public static int GetHighestCardValue(int[] values)
         {
-            for (int i = 0; i < values[i]; i++)
+            BubbleSort(values);
+            int highestCard = 0;
+            if (values[ACE] == ACE)
             {
-
+                highestCard = ACE;
             }
-            return values;
+            else
+            {
+                highestCard = values[values.Length - 1];
+            }
+            return highestCard;
         }
+
 
 
         //public static int GetHandScore(int[] cardIndexes)
