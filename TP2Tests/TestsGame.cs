@@ -273,221 +273,221 @@ namespace TP2Tests
         //#endregion // HasAllFaces
 
         //#region HasOnlyFaces
-        //[Fact]
-        //public void CantFindOnlyFacesIfNonePresent()
-        //{
-        //    // Arrange
-        //    // 4, 5, 6, 7, 8
-        //    int[] values = { 3, 4, 5, 6, 7 };
+        [Fact]
+        public void CantFindOnlyFacesIfNonePresent()
+        {
+            // Arrange
+            // 4, 5, 6, 7, 8
+            int[] values = { 3, 4, 5, 6, 7 };
 
-        //    // Act
-        //    bool hasOnlyFaces = Game.HasOnlyFaces(values);
+            // Act
+            bool hasOnlyFaces = Game.HasOnlyFaces(values);
 
-        //    // Assert
-        //    Assert.False(hasOnlyFaces);
-        //}
+            // Assert
+            Assert.False(hasOnlyFaces);
+        }
 
-        //[Fact]
-        //public void CantFindOnlyFacesIfNotOnlyFacesPresent()
-        //{
-        //    // Arrange
-        //    // 4, 5, 6, Valet, Roi
-        //    int[] values = { 3, 4, 5, 10, 12 };
+        [Fact]
+        public void CantFindOnlyFacesIfNotOnlyFacesPresent()
+        {
+            // Arrange
+            // 4, 5, 6, Valet, Roi
+            int[] values = { 3, 4, 5, 10, 12 };
 
-        //    // Act
-        //    bool hasOnlyFaces = Game.HasOnlyFaces(values);
+            // Act
+            bool hasOnlyFaces = Game.HasOnlyFaces(values);
 
-        //    // Assert
-        //    Assert.False(hasOnlyFaces);
-        //}
+            // Assert
+            Assert.False(hasOnlyFaces);
+        }
 
-        //[Fact]
-        //public void CanFindOnlyFacesIfPresent()
-        //{
-        //    // Arrange
-        //    // Reine, Valet, Roi, Valet, Roi
-        //    int[] values = { 11, 10, 11, 10, 12 };
+        [Fact]
+        public void CanFindOnlyFacesIfPresent()
+        {
+            // Arrange
+            // Reine, Valet, Roi, Valet, Roi
+            int[] values = { 11, 10, 11, 10, 12 };
 
-        //    // Act
-        //    bool hasOnlyFaces = Game.HasOnlyFaces(values);
+            // Act
+            bool hasOnlyFaces = Game.HasOnlyFaces(values);
 
-        //    // Assert
-        //    Assert.True(hasOnlyFaces);
-        //}
+            // Assert
+            Assert.True(hasOnlyFaces);
+        }
 
-        //[Fact]
-        //public void CanFindOnlyFacesIfAllSameFace()
-        //{
-        //    // Arrange
-        //    // Valet, Valet, Valet, Valet, Valet
-        //    int[] values = { 10, 10, 10, 10, 10 };
+        [Fact]
+        public void CanFindOnlyFacesIfAllSameFace()
+        {
+            // Arrange
+            // Valet, Valet, Valet, Valet, Valet
+            int[] values = { 10, 10, 10, 10, 10 };
 
-        //    // Act
-        //    bool hasOnlyFaces = Game.HasOnlyFaces(values);
+            // Act
+            bool hasOnlyFaces = Game.HasOnlyFaces(values);
 
-        //    // Assert
-        //    Assert.True(hasOnlyFaces);
-        //}
+            // Assert
+            Assert.True(hasOnlyFaces);
+        }
 
-        //[Fact]
-        //public void CanFindOnlyFacesIfAllFacesPresent()
-        //{
-        //    // Arrange
-        //    // Reine, Valet, Roi
-        //    int[] values = { 12, 10, 11, };
+        [Fact]
+        public void CanFindOnlyFacesIfAllFacesPresent()
+        {
+            // Arrange
+            // Reine, Valet, Roi
+            int[] values = { 12, 10, 11, };
 
-        //    // Act
-        //    bool hasOnlyFaces = Game.HasOnlyFaces(values);
+            // Act
+            bool hasOnlyFaces = Game.HasOnlyFaces(values);
 
-        //    // Assert
-        //    Assert.True(hasOnlyFaces);
-        //}
+            // Assert
+            Assert.True(hasOnlyFaces);
+        }
         //#endregion // HasOnlyFaces
 
         //#region HasSameColorSequence
-        //[Fact]
-        //public void CantFindSameColorSequenceIfNonePresent()
-        //{
-        //    // Arrange
-        //    // 4, 7, 2, Valet, Roi
-        //    int[] values = { 3, 6, 1, 10, 12 };
-        //    // Coeur, Diamant, Pique, Trèfle, Coeur
-        //    int[] suits = { 0, 1, 2, 3, 0 };
+        [Fact]
+        public void CantFindSameColorSequenceIfNonePresent()
+        {
+            // Arrange
+            // 4, 7, 2, Valet, Roi
+            int[] values = { 3, 6, 1, 10, 12 };
+            // Coeur, Diamant, Pique, Trèfle, Coeur
+            int[] suits = { 0, 1, 2, 3, 0 };
 
-        //    // Act
-        //    bool hasSameColorSequence = Game.HasSameColorSequence(values, suits);
+            // Act
+            bool hasSameColorSequence = Game.HasSameColorSequence(values, suits);
 
-        //    // Assert
-        //    Assert.False(hasSameColorSequence);
-        //}
+            // Assert
+            Assert.False(hasSameColorSequence);
+        }
 
-        //[Fact]
-        //public void CantFindSameColorSequenceIfOnlySequencePresent()
-        //{
-        //    // Arrange
-        //    // 4, 7, 5, 6, 8 (4, 5, 6, 7, 8)
-        //    int[] values = { 3, 6, 4, 5, 7 };
-        //    // Coeur, Diamant, Pique, Trèfle, Coeur
-        //    int[] suits = { 0, 1, 2, 3, 0 };
+        [Fact]
+        public void CantFindSameColorSequenceIfOnlySequencePresent()
+        {
+            // Arrange
+            // 4, 7, 5, 6, 8 (4, 5, 6, 7, 8)
+            int[] values = { 3, 6, 4, 5, 7 };
+            // Coeur, Diamant, Pique, Trèfle, Coeur
+            int[] suits = { 0, 1, 2, 3, 0 };
 
-        //    // Act
-        //    bool hasSameColorSequence = Game.HasSameColorSequence(values, suits);
+            // Act
+            bool hasSameColorSequence = Game.HasSameColorSequence(values, suits);
 
-        //    // Assert
-        //    Assert.False(hasSameColorSequence);
-        //}
+            // Assert
+            Assert.False(hasSameColorSequence);
+        }
 
-        //[Fact]
-        //public void CantFindSameColorSequenceIfOnlySameColorPresent()
-        //{
-        //    // Arrange
-        //    // 4, 7, 2, Valet, Roi
-        //    int[] values = { 3, 6, 1, 10, 12 };
-        //    // Coeur, Diamant, Diamant, Diamant, Coeur
-        //    int[] suits = { 0, 1, 1, 1, 0 };
+        [Fact]
+        public void CantFindSameColorSequenceIfOnlySameColorPresent()
+        {
+            // Arrange
+            // 4, 7, 2, Valet, Roi
+            int[] values = { 3, 6, 1, 10, 12 };
+            // Coeur, Diamant, Diamant, Diamant, Coeur
+            int[] suits = { 0, 1, 1, 1, 0 };
 
-        //    // Act
-        //    bool hasSameColorSequence = Game.HasSameColorSequence(values, suits);
+            // Act
+            bool hasSameColorSequence = Game.HasSameColorSequence(values, suits);
 
-        //    // Assert
-        //    Assert.False(hasSameColorSequence);
-        //}
-        //[Fact]
-        //public void CanFindSameColorSequenceIfPresent()
-        //{
-        //    // Arrange
-        //    // 4, As, 5, 3, 2 (As, 2, 3, 4, 5)
-        //    int[] values = { 3, 0, 4, 2, 1 };
-        //    // Coeur, Diamant, Diamant, Diamant, Coeur
-        //    int[] suits = { 0, 1, 1, 1, 0 };
+            // Assert
+            Assert.False(hasSameColorSequence);
+        }
+        [Fact]
+        public void CanFindSameColorSequenceIfPresent()
+        {
+            // Arrange
+            // 4, As, 5, 3, 2 (As, 2, 3, 4, 5)
+            int[] values = { 3, 0, 4, 2, 1 };
+            // Coeur, Diamant, Diamant, Diamant, Coeur
+            int[] suits = { 0, 1, 1, 1, 0 };
 
-        //    // Act
-        //    bool hasSameColorSequence = Game.HasSameColorSequence(values, suits);
+            // Act
+            bool hasSameColorSequence = Game.HasSameColorSequence(values, suits);
 
-        //    // Assert
-        //    Assert.True(hasSameColorSequence);
-        //}
+            // Assert
+            Assert.True(hasSameColorSequence);
+        }
         //#endregion // HasSameColorSequence
 
         //#region HasSequence
-        //[Fact]
-        //public void CantFindSequenceIfNonePresent()
-        //{
-        //    // Arrange
-        //    // 4, Valet, 2, 5, 8
-        //    int[] values = { 3, 10, 1, 4, 7 };
+        [Fact]
+        public void CantFindSequenceIfNonePresent()
+        {
+            // Arrange
+            // 4, Valet, 2, 5, 8
+            int[] values = { 3, 10, 1, 4, 7 };
 
-        //    // Act
-        //    bool hasSequence = Game.HasSequence(values);
+            // Act
+            bool hasSequence = Game.HasSequence(values);
 
-        //    // Assert
-        //    Assert.False(hasSequence);
-        //}
-        //[Fact]
-        //public void CanFindSequenceIfPresent()
-        //{
-        //    // Arrange
-        //    // 4, 5, 6, 7, 8
-        //    int[] values = { 3, 4, 5, 6, 7 };
+            // Assert
+            Assert.False(hasSequence);
+        }
+        [Fact]
+        public void CanFindSequenceIfPresent()
+        {
+            // Arrange
+            // 4, 5, 6, 7, 8
+            int[] values = { 3, 4, 5, 6, 7 };
 
-        //    // Act
-        //    bool hasSequence = Game.HasSequence(values);
+            // Act
+            bool hasSequence = Game.HasSequence(values);
 
-        //    // Assert
-        //    Assert.True(hasSequence);
-        //}
-        //[Fact]
-        //public void CanFindSequenceWithAce()
-        //{
-        //    // Arrange
-        //    // As, 2, 3, 4, 5
-        //    int[] values = { 0, 1, 2, 3, 4 };
+            // Assert
+            Assert.True(hasSequence);
+        }
+        [Fact]
+        public void CanFindSequenceWithAce()
+        {
+            // Arrange
+            // As, 2, 3, 4, 5
+            int[] values = { 0, 1, 2, 3, 4 };
 
-        //    // Act
-        //    bool hasSequence = Game.HasSequence(values);
+            // Act
+            bool hasSequence = Game.HasSequence(values);
 
-        //    // Assert
-        //    Assert.True(hasSequence);
-        //}
-        //[Fact]
-        //public void CanFindSequenceWithFaces()
-        //{
-        //    // Arrange
-        //    // 9, 10, Valet, Reine, Roi
-        //    int[] values = { 8, 9, 10, 11, 12 };
+            // Assert
+            Assert.True(hasSequence);
+        }
+        [Fact]
+        public void CanFindSequenceWithFaces()
+        {
+            // Arrange
+            // 9, 10, Valet, Reine, Roi
+            int[] values = { 8, 9, 10, 11, 12 };
 
-        //    // Act
-        //    bool hasSequence = Game.HasSequence(values);
+            // Act
+            bool hasSequence = Game.HasSequence(values);
 
-        //    // Assert
-        //    Assert.True(hasSequence);
-        //}
-        //[Fact]
-        //public void CantFindSequenceWithAceAndFaces()
-        //{
-        //    // Arrange
-        //    // 10, Valet, Reine, Roi, As
-        //    int[] values = { 9, 10, 11, 12, 0 };
+            // Assert
+            Assert.True(hasSequence);
+        }
+        [Fact]
+        public void CantFindSequenceWithAceAndFaces()
+        {
+            // Arrange
+            // 10, Valet, Reine, Roi, As
+            int[] values = { 9, 10, 11, 12, 0 };
 
-        //    // Act
-        //    bool hasSequence = Game.HasSequence(values);
+            // Act
+            bool hasSequence = Game.HasSequence(values);
 
-        //    // Assert
-        //    Assert.False(hasSequence);
-        //}
-        //[Fact]
-        //public void CanFindSequenceNotInOrder()
-        //{
-        //    // Arrange
-        //    // 5, 8, 7, 6, 4 (4, 5, 6, 7, 8)
-        //    int[] values = { 4, 7, 6, 5, 3 };
+            // Assert
+            Assert.False(hasSequence);
+        }
+        [Fact]
+        public void CanFindSequenceNotInOrder()
+        {
+            // Arrange
+            // 5, 8, 7, 6, 4 (4, 5, 6, 7, 8)
+            int[] values = { 4, 7, 6, 5, 3 };
 
-        //    // Act
-        //    bool hasSequence = Game.HasSequence(values);
+            // Act
+            bool hasSequence = Game.HasSequence(values);
 
-        //    // Assert
-        //    Assert.True(hasSequence);
-        //}
+            // Assert
+            Assert.True(hasSequence);
+        }
         //#endregion // HasSequence
 
         //#region GetScoreFromMultipleCardsOfASuit
