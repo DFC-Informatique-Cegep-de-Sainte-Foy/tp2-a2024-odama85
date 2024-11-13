@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Design;
+using System.Reflection;
+using System.Reflection.Metadata.Ecma335;
 
 namespace TP2
 {
@@ -40,6 +42,8 @@ namespace TP2
         public const int SAME_COLOR_SEQUENCE_SCORE = 28;
         public const int SEQUENCE_SCORE = 26;
         public const int SAME_COLOR_SCORE = 24;
+
+        
         #endregion
 
         public static int GetSuitFromCardIndex(int index)
@@ -94,7 +98,9 @@ namespace TP2
 
             return scoreCard;
         }
-        // Fonction de tri à bulles necessaire pour classer un tableau en ordre 
+        // Fonction de tri à bulles necessaire pour classer un tableau en ordre
+        // afin de ressortir la carte qui a la plus grande valeur à partir de la 
+        //fonction GetHighestCardValue
         public static void BubbleSort(int[] values)
         {
             bool isSmaller = false;
@@ -114,11 +120,12 @@ namespace TP2
                 }
             } while (isSmaller);
         }
+        // La fonction GetHighestCardValue nous retourne la carte qui a la plus grande valeur
         public static int GetHighestCardValue(int[] values)
         {
             BubbleSort(values);
-            int highestCard = 0;
-            if (values[ACE] == ACE)
+            int highestCard = -1;
+            if (values[0] == ACE)
             {
                 highestCard = ACE;
             }
@@ -128,8 +135,53 @@ namespace TP2
             }
             return highestCard;
         }
+        public static bool HasOnlySameColorCards(int[] suits)
+        {
+            bool isSameColor = false;
 
+            for (int i = 0; i < suits.Length; i++) 
+            {
+                isSameColor = (getColor(suits[0]) == getColor(suits[i])) && (getColor(suits[0]) < 3 && getColor(suits[i]) < 3);
+                if(!isSameColor) break;
+            }
 
+            return isSameColor;
+        }
+        public static bool HasAllSameCardValues(int[] values)
+        {
+            bool isSameValue = false;
+
+            for (int i = 0; i < values.Length; i++)
+            {
+                isSameValue = values[0] == values[i];
+                if (!isSameValue)
+                {
+                    break;
+                }
+                  
+            }
+
+            return isSameValue;
+        }
+        public static bool HasAllFaces(int[] values)
+        {
+            // creer une variable tableau on on va stocker les valeurs de chaque index de carte
+            bool isAllFaces = false;
+            int [] faces = new int[values.Length];
+            // parcourir le toutes les cartes de la manche
+            for (int i = 0; i < faces.Length; i++)
+            {
+                faces[i] = GetScoreFromCardValue(i);
+
+                isAllFaces = faces[i] == 10 || faces[i] == 11 || faces[i] == 12;
+                break;
+              
+            }
+            return isAllFaces;
+
+            // pour chaque index, on recupere sa valeur (une fonction pour ca existe deja) et stocker dans le tableau
+            // dans le tableau de valeur on verifi qu'on a les valeurs 10, 11, 12
+        }
 
         //public static int GetHandScore(int[] cardIndexes)
         //{
@@ -150,6 +202,30 @@ namespace TP2
             //Display.WriteString($"Votre score est de : {hand}", 0, Display.CARD_HEIGHT + 14, ConsoleColor.Black);
         }
 
+
+        #region Fonctions Utilitaires
+
+        public static int getColor(int color) 
+        { 
+            if(color == SPADE || color == CLUB)
+            { 
+                return 1; // Noir
+            }
+            else if (color == HEART || color == DIAMOND)
+            {
+                return 2; // rouge
+            }
+            else
+            {
+                return 3; // autre
+            }
+        }
+
+      
+
+
+
+        #endregion
 
     }
 

@@ -92,182 +92,182 @@ namespace TP2Tests
         //#endregion // GetHighestCardValue
 
         //#region HasOnlySameColorCards
-        //[Fact]
-        //public void CantFindOnlySameColorIfDifferentColorsPresent()
-        //{
-        //    // Arrange
-        //    // Coeur, Diamant, Pique, Trèfle, Coeur
-        //    int[] suits = { 0, 1, 2, 3, 0 };
+        [Fact]
+        public void CantFindOnlySameColorIfDifferentColorsPresent()
+        {
+            // Arrange
+            // Coeur, Diamant, Pique, Trèfle, Coeur
+            int[] suits = { 0, 1, 2, 3, 0 };
 
-        //    // Act
-        //    bool onlySameColor = Game.HasOnlySameColorCards(suits);
+            // Act
+            bool onlySameColor = Game.HasOnlySameColorCards(suits);
 
-        //    // Assert
-        //    Assert.False(onlySameColor);
-        //}
-        //[Fact]
-        //public void CanFindOnlySameColorCardsAllRed()
-        //{
-        //    // Arrange
-        //    // Coeur, Diamant, Diamant, Coeur, Coeur
-        //    int[] suits = { 0, 1, 1, 0, 0 };
+            // Assert
+            Assert.False(onlySameColor);
+        }
+        [Fact]
+        public void CanFindOnlySameColorCardsAllRed()
+        {
+            // Arrange
+            // Coeur, Diamant, Diamant, Coeur, Coeur
+            int[] suits = { 0, 1, 1, 0, 0 };
 
-        //    // Act
-        //    bool onlySameColor = Game.HasOnlySameColorCards(suits);
+            // Act
+            bool onlySameColor = Game.HasOnlySameColorCards(suits);
 
-        //    // Assert
-        //    Assert.True(onlySameColor);
-        //}
-        //[Fact]
-        //public void CanFindOnlySameColorCardsAllBlack()
-        //{
-        //    // Arrange
-        //    // Pique, Trèfle, Trèfle, Pique, Pique
-        //    int[] suits = { 2, 3, 3, 2, 2 };
+            // Assert
+            Assert.True(onlySameColor);
+        }
+        [Fact]
+        public void CanFindOnlySameColorCardsAllBlack()
+        {
+            // Arrange
+            // Pique, Trèfle, Trèfle, Pique, Pique
+            int[] suits = { 2, 3, 3, 2, 2 };
 
-        //    // Act
-        //    bool onlySameColor = Game.HasOnlySameColorCards(suits);
+            // Act
+            bool onlySameColor = Game.HasOnlySameColorCards(suits);
 
-        //    // Assert
-        //    Assert.True(onlySameColor);
-        //}
-        //[Fact]
-        //public void CantFindOnlySameColorCardsIfNonExistentColorPresent()
-        //{
-        //    // Arrange
-        //    // Pique, Trèfle, Pique, ?, Pique
-        //    int[] suits = { 2, 3, 2, 4, 2 };
+            // Assert
+            Assert.True(onlySameColor);
+        }
+        [Fact]
+        public void CantFindOnlySameColorCardsIfNonExistentColorPresent()
+        {
+            // Arrange
+            // Pique, Trèfle, Pique, ?, Pique
+            int[] suits = { 2, 3, 2, 4, 2 };
 
-        //    // Act
-        //    bool onlySameColor = Game.HasOnlySameColorCards(suits);
+            // Act
+            bool onlySameColor = Game.HasOnlySameColorCards(suits);
 
-        //    // Assert
-        //    Assert.False(onlySameColor);
-        //}
+            // Assert
+            Assert.False(onlySameColor);
+        }
 
-        //[Fact]
-        //public void CantFindOnlySameColorCardsIfOnlyNonExistentColorsPresent()
-        //{
-        //    // Arrange
-        //    // ?, ?, ?, ?, ?
-        //    int[] suits = { 4, 5, 6, 7, 8 };
+        [Fact]
+        public void CantFindOnlySameColorCardsIfOnlyNonExistentColorsPresent()
+        {
+            // Arrange
+            // ?, ?, ?, ?, ?
+            int[] suits = { 4, 5, 6, 7, 8 };
 
-        //    // Act
-        //    bool onlySameColor = Game.HasOnlySameColorCards(suits);
+            // Act
+            bool onlySameColor = Game.HasOnlySameColorCards(suits);
 
-        //    // Assert
-        //    Assert.False(onlySameColor);
-        //}
+            // Assert
+            Assert.False(onlySameColor);
+        }
         //#endregion // HasOnlySameColorCards
 
         //#region HasAllSameCardValues
-        //[Fact]
-        //public void CantFindAllSameCardValuesIfNotPresent()
-        //{
-        //    // Arrange
-        //    // As, 8, Valet, 10, Roi
-        //    int[] values = { 0, 7, 10, 9, 12 };
+        [Fact]
+        public void CantFindAllSameCardValuesIfNotPresent()
+        {
+            // Arrange
+            // As, 8, Valet, 10, Roi
+            int[] values = { 0, 7, 10, 9, 12 };
 
-        //    // Act
-        //    bool hasAllSameCardValues = Game.HasAllSameCardValues(values);
+            // Act
+            bool hasAllSameCardValues = Game.HasAllSameCardValues(values);
 
-        //    // Assert
-        //    Assert.False(hasAllSameCardValues);
-        //}
-        //[Fact]
-        //public void CantFindAllSameCardValuesIfMajorityOfCardsHaveSameValue()
-        //{
-        //    // Arrange
-        //    // 4, 4, 4, 5, 5
-        //    int[] values = { 3, 3, 3, 4, 4 };
+            // Assert
+            Assert.False(hasAllSameCardValues);
+        }
+        [Fact]
+        public void CantFindAllSameCardValuesIfMajorityOfCardsHaveSameValue()
+        {
+            // Arrange
+            // 4, 4, 4, 5, 5
+            int[] values = { 3, 3, 3, 4, 4 };
 
-        //    // Act
-        //    bool hasAllSameCardValues = Game.HasAllSameCardValues(values);
+            // Act
+            bool hasAllSameCardValues = Game.HasAllSameCardValues(values);
 
-        //    // Assert
-        //    Assert.False(hasAllSameCardValues);
-        //}
-        //[Fact]
-        //public void CanFindAllSameCardValuesIfPresent()
-        //{
-        //    // Arrange
-        //    // 10, 10, 10, 10, 10
-        //    int[] values = { 9, 9, 9, 9, 9 };
+            // Assert
+            Assert.False(hasAllSameCardValues);
+        }
+        [Fact]
+        public void CanFindAllSameCardValuesIfPresent()
+        {
+            // Arrange
+            // 10, 10, 10, 10, 10
+            int[] values = { 9, 9, 9, 9, 9 };
 
-        //    // Act
-        //    bool hasAllSameCardValues = Game.HasAllSameCardValues(values);
+            // Act
+            bool hasAllSameCardValues = Game.HasAllSameCardValues(values);
 
-        //    // Assert
-        //    Assert.True(hasAllSameCardValues);
-        //}
+            // Assert
+            Assert.True(hasAllSameCardValues);
+        }
         //#endregion // HasAllSameCardValues
 
         //#region HasAllFaces
-        //[Fact]
-        //public void CantFindAllFacesIfNonePresent()
-        //{
-        //    // Arrange
-        //    // 6, 10, As
-        //    int[] values = { 5, 9, 0 };
+        [Fact]
+        public void CantFindAllFacesIfNonePresent()
+        {
+            // Arrange
+            // 6, 10, As
+            int[] values = { 5, 9, 0 };
 
-        //    // Act
-        //    bool hasAllFaces = Game.HasAllFaces(values);
+            // Act
+            bool hasAllFaces = Game.HasAllFaces(values);
 
-        //    // Assert
-        //    Assert.False(hasAllFaces);
-        //}
-        //[Fact]
-        //public void CantFindAllFacesIfNotOnlyFacesPresent()
-        //{
-        //    // Arrange
-        //    // Valet, Reine, As
-        //    int[] values = { 10, 11, 0 };
+            // Assert
+            Assert.False(hasAllFaces);
+        }
+        [Fact]
+        public void CantFindAllFacesIfNotOnlyFacesPresent()
+        {
+            // Arrange
+            // Valet, Reine, As
+            int[] values = { 10, 11, 0 };
 
-        //    // Act
-        //    bool hasAllFaces = Game.HasAllFaces(values);
+            // Act
+            bool hasAllFaces = Game.HasAllFaces(values);
 
-        //    // Assert
-        //    Assert.False(hasAllFaces);
-        //}
-        //[Fact]
-        //public void CantFindAllFacesIfMultipleSameFacesPresent()
-        //{
-        //    // Arrange
-        //    // Valet, Roi, Roi
-        //    int[] values = { 10, 12, 12 };
+            // Assert
+            Assert.False(hasAllFaces);
+        }
+        [Fact]
+        public void CantFindAllFacesIfMultipleSameFacesPresent()
+        {
+            // Arrange
+            // Valet, Roi, Roi
+            int[] values = { 10, 12, 12 };
 
-        //    // Act
-        //    bool hasAllFaces = Game.HasAllFaces(values);
+            // Act
+            bool hasAllFaces = Game.HasAllFaces(values);
 
-        //    // Assert
-        //    Assert.False(hasAllFaces);
-        //}
-        //[Fact]
-        //public void CanFindAllFacesIfPresent()
-        //{
-        //    // Arrange
-        //    // Valet, Reine, As
-        //    int[] values = { 10, 11, 12 };
+            // Assert
+            Assert.False(hasAllFaces);
+        }
+        [Fact]
+        public void CanFindAllFacesIfPresent()
+        {
+            // Arrange
+            // Valet, Reine, As
+            int[] values = { 10, 11, 12 };
 
-        //    // Act
-        //    bool hasAllFaces = Game.HasAllFaces(values);
+            // Act
+            bool hasAllFaces = Game.HasAllFaces(values);
 
-        //    // Assert
-        //    Assert.True(hasAllFaces);
-        //}
-        //[Fact]
-        //public void CanFindAllFacesIfPresentNotInOrder()
-        //{
-        //    // Arrange
-        //    // Valet, Reine, As
-        //    int[] values = { 12, 10, 11 };
+            // Assert
+            Assert.True(hasAllFaces);
+        }
+        [Fact]
+        public void CanFindAllFacesIfPresentNotInOrder()
+        {
+            // Arrange
+            // Valet, Reine, As
+            int[] values = { 12, 10, 11 };
 
-        //    // Act
-        //    bool hasAllFaces = Game.HasAllFaces(values);
+            // Act
+            bool hasAllFaces = Game.HasAllFaces(values);
 
-        //    // Assert
-        //    Assert.True(hasAllFaces);
-        //}
+            // Assert
+            Assert.True(hasAllFaces);
+        }
 
 
         //#endregion // HasAllFaces
